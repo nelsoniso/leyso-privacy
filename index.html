@@ -87,6 +87,25 @@
       color: #333;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid #e5e1d8;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3f0e8;
+      font-weight: 600;
+    }
+
     footer {
       margin-top: 60px;
       font-size: 13px;
@@ -107,11 +126,12 @@
     </div>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: June 14, 2026</p>
+    <p class="updated">Last updated: July 1, 2026</p>
 
     <div class="highlight">
-      <strong>Short version:</strong> Leyso does not collect, store, or share any personal data.
-      Your location stays on your device and is never transmitted to our servers.
+      <strong>Short version:</strong> Leyso does not require an account and does not use analytics or advertising.
+      Your location is never sent to our servers.
+      If you optionally tick terrace tags (“Sur place”), those tags are shared with other users via our server — without your name or email.
     </div>
 
     <h2>1. Who we are</h2>
@@ -121,64 +141,122 @@
       Contact: <a href="mailto:contact.avisarem@gmail.com">contact.avisarem@gmail.com</a>
     </p>
 
-    <h2>2. Data we collect</h2>
-    <p>Leyso collects <strong>no personal data</strong>. Specifically:</p>
+    <h2>2. What we do not collect</h2>
+    <p>Leyso does <strong>not</strong> build a profile of you. Specifically:</p>
     <ul>
       <li>We do <strong>not</strong> create user accounts.</li>
-      <li>We do <strong>not</strong> collect names, email addresses, or any identifiers.</li>
+      <li>We do <strong>not</strong> collect your name, email address, or advertising identifiers.</li>
       <li>We do <strong>not</strong> track usage, install analytics, or use advertising SDKs.</li>
-      <li>We do <strong>not</strong> share any data with third parties.</li>
+      <li>We do <strong>not</strong> sell personal data.</li>
     </ul>
+    <p style="margin-top:10px;">
+      The one exception is optional <strong>terrace tags</strong> you choose to submit — see section 4 below.
+    </p>
 
     <h2>3. Location</h2>
     <p>
       Leyso can show your current position on the map. This is <strong>entirely optional</strong>.
-      If you grant permission, your location is used only on your device to place a marker on the map —
-      it is never sent to any server, stored, or logged anywhere.
-      You can revoke this permission at any time in your device's Settings app.
+      If you grant permission, your location is used on your device to place a marker on the map and for nearby search —
+      it is <strong>never sent to our servers</strong>.
+      Your last known position may be saved <strong>locally on your device</strong> so the map can restore it on the next launch.
+      You can revoke location permission at any time in your device's Settings app.
     </p>
 
-    <h2>4. Notifications</h2>
+    <h2>4. Terrace tags (“Sur place”)</h2>
+    <p>
+      Leyso lets you tick optional features on a terrasse (parasol, Wi‑Fi, dogs allowed, table count, etc.).
+      This is <strong>crowd-sourced information</strong> shared with other users.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>What is sent to our server</th>
+          <th>What is <em>not</em> sent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>An internal terrasse identifier</td>
+          <td>Your name, email, or Apple/Google account</td>
+        </tr>
+        <tr>
+          <td>The tags you selected</td>
+          <td>Your precise GPS position</td>
+        </tr>
+        <tr>
+          <td>A server timestamp</td>
+          <td>Device ID or advertising identifier</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul style="margin-top:12px;">
+      <li>Tags are stored on <strong>Cloudflare</strong> (Worker + database) and visible to all Leyso users; the latest change wins for a given terrasse.</li>
+      <li>We do <strong>not</strong> publish who changed a tag.</li>
+      <li>You can make up to <strong>15 tag changes per Geneva calendar day</strong> per device (enforced locally).</li>
+      <li>A local cache and offline queue on your device sync when you are back online.</li>
+    </ul>
+    <p style="margin-top:10px;">
+      To request removal of tags for a specific terrasse, email us with the terrasse name and, if possible, a link from the app.
+    </p>
+
+    <h2>5. Data stored on your device</h2>
+    <p>
+      Leyso saves some preferences locally in your browser or app storage (for example favorites, language, theme,
+      recent searches, notification settings, and the terrace-tag cache above).
+      This data stays on your device unless you delete the app or clear site data.
+    </p>
+
+    <h2>6. Notifications</h2>
     <p>
       Leyso may send you local notifications to let you know when a sunny terrasse
-      is available near you. These notifications are generated entirely on your device.
-      No data leaves your device to produce them.
+      is available near you. These notifications are generated on your device from local data and settings.
+      No personal data is sent to our servers to produce them.
       You can disable notifications at any time in your device's Settings app.
     </p>
 
-    <h2>5. Map and terrasse data</h2>
+    <h2>7. Map and network services</h2>
     <p>
-      All terrasse and map data is bundled inside the app or fetched from public open-data sources:
+      Terrasse and map data is bundled inside the app or fetched from public sources and our infrastructure:
     </p>
     <ul>
       <li><a href="https://www.sitg.ch" target="_blank" rel="noopener">SITG</a> (State of Geneva) — terrasse permits, building footprints, street network (open data)</li>
       <li><a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a> — supplementary names and links (ODbL)</li>
-      <li><a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> — current weather icon (CC-BY 4.0, no personal data sent)</li>
+      <li><a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> — weather icon and forecasts for Geneva (CC-BY 4.0; Geneva coordinates only, no account)</li>
+      <li><a href="https://www.swisstopo.admin.ch" target="_blank" rel="noopener">swisstopo</a> — address search via geo.admin.ch when you type in the search bar (your search query only)</li>
+      <li><strong>Cloudflare</strong> — terrasse catalogue updates and terrace-tag sync (see section 4)</li>
     </ul>
-    <p style="margin-top:10px;">
-      When the weather icon is shown, Leyso fetches the current weather for Geneva's coordinates from Open-Meteo's public API.
-      No personal information is included in this request.
+
+    <h2>8. Owner / terrasse correction form</h2>
+    <p>
+      If you use the owner contact form to add or correct a terrasse, Leyso prepares an <strong>email in your mail app</strong>.
+      <strong>You choose whether to send it.</strong> The message may include business details you enter (name, address, hours, phone, website, optional tags).
+      We process those emails manually; nothing is uploaded without your send action.
     </p>
 
-    <h2>6. Directions</h2>
+    <h2>9. Directions</h2>
     <p>
-      Tapping "Y aller" opens Apple Maps (on iOS) or <a href="https://maps.apple.com" target="_blank" rel="noopener">maps.apple.com</a> (on the web)
+      Tapping “Y aller” opens Apple Maps (on iOS) or <a href="https://maps.apple.com" target="_blank" rel="noopener">maps.apple.com</a> (on the web)
       with the terrasse coordinates pre-filled. Leyso does not control what Apple does with that information;
       please refer to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.
     </p>
 
-    <h2>7. Children</h2>
-    <p>Leyso does not knowingly collect any information from children under 13.</p>
-
-    <h2>8. Changes to this policy</h2>
+    <h2>10. In-app tips (iOS)</h2>
     <p>
-      If we ever make material changes, we will update the date at the top of this page.
-      Since we collect no personal data, changes are expected to be minor and infrequent.
+      Optional tips use Apple In-App Purchase. Payment is handled entirely by Apple; we do not receive your card details.
     </p>
 
-    <h2>9. Contact</h2>
+    <h2>11. Children</h2>
+    <p>Leyso does not knowingly collect any information from children under 13.</p>
+
+    <h2>12. Changes to this policy</h2>
     <p>
-      Questions? Write to us at <a href="mailto:contact.avisarem@gmail.com">contact.avisarem@gmail.com</a>.
+      We update this page when the app changes in ways that affect privacy.
+      The date at the top reflects the latest revision.
+    </p>
+
+    <h2>13. Contact</h2>
+    <p>
+      Questions or deletion requests? Write to us at <a href="mailto:contact.avisarem@gmail.com">contact.avisarem@gmail.com</a>.
     </p>
 
     <footer>

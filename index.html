@@ -126,17 +126,19 @@
     </div>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 1, 2026</p>
+    <p class="updated">Last updated: 10 September 2026</p>
 
     <div class="highlight">
       <strong>Short version:</strong> Leyso does not require an account and does not use analytics or advertising.
       Your location is never sent to our servers.
+      City maps download once from Cloudflare as data files (images + JSON), not as executable code.
       If you optionally tick terrace tags (“Sur place”), those tags are shared with other users via our server — without your name or email.
     </div>
 
     <h2>1. Who we are</h2>
     <p>
-      Leyso is a free map application showing sun-exposed café and restaurant terrasses in Geneva, Switzerland.
+      Leyso is a free map application showing sun-exposed café and restaurant terrasses in
+      <strong>Geneva (Genève)</strong> and <strong>Basel (Bâle)</strong>, Switzerland.
       It is produced and published by <strong>Avisarem</strong>.
       Contact: <a href="mailto:contact.avisarem@gmail.com">contact.avisarem@gmail.com</a>
     </p>
@@ -192,7 +194,7 @@
     <ul style="margin-top:12px;">
       <li>Tags are stored on <strong>Cloudflare</strong> (Worker + database) and visible to all Leyso users; the latest change wins for a given terrasse.</li>
       <li>We do <strong>not</strong> publish who changed a tag.</li>
-      <li>You can make up to <strong>15 tag changes per Geneva calendar day</strong> per device (enforced locally).</li>
+      <li>You can make up to <strong>15 tag changes per Geneva calendar day</strong> per device. The app enforces this locally; the server also applies a matching daily limit per connecting IP, plus a short-term rate limit.</li>
       <li>A local cache and offline queue on your device sync when you are back online.</li>
     </ul>
     <p style="margin-top:10px;">
@@ -203,6 +205,8 @@
     <p>
       Leyso saves some preferences locally in your browser or app storage (for example favorites, language, theme,
       recent searches, notification settings, and the terrace-tag cache above).
+      After you choose a city, Leyso may also download a <strong>city map pack</strong> (map imagery and place catalogues for Genève and/or Bâle)
+      into on-device storage so the map works offline. Packs are data files only — not app code.
       This data stays on your device unless you delete the app or clear site data.
     </p>
 
@@ -216,14 +220,15 @@
 
     <h2>7. Map and network services</h2>
     <p>
-      Terrasse and map data is bundled inside the app or fetched from public sources and our infrastructure:
+      Terrasse and map data is delivered as city packs and public sources via our infrastructure:
     </p>
     <ul>
-      <li><a href="https://www.sitg.ch" target="_blank" rel="noopener">SITG</a> (State of Geneva) — terrasse permits, building footprints, street network (open data)</li>
+      <li><strong>Cloudflare R2</strong> — city map packs (tiles, buildings, terrasse catalogues) downloaded once per city; HTTPS read-only from the app</li>
+      <li><strong>Cloudflare Worker</strong> — terrace-tag sync (see section 4)</li>
+      <li><a href="https://www.sitg.ch" target="_blank" rel="noopener">SITG</a> (State of Geneva) — terrasse permits, building footprints, street network (open data) baked into packs</li>
       <li><a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a> — supplementary names and links (ODbL)</li>
-      <li><a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> — weather icon and forecasts for Geneva (CC-BY 4.0; Geneva coordinates only, no account)</li>
+      <li><a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> — weather icon and forecasts (coordinates for the active city only, no account)</li>
       <li><a href="https://www.swisstopo.admin.ch" target="_blank" rel="noopener">swisstopo</a> — address search via geo.admin.ch when you type in the search bar (your search query only)</li>
-      <li><strong>Cloudflare</strong> — terrasse catalogue updates and terrace-tag sync (see section 4)</li>
     </ul>
 
     <h2>8. Owner / terrasse correction form</h2>
@@ -235,14 +240,20 @@
 
     <h2>9. Directions</h2>
     <p>
-      Tapping “Y aller” opens Apple Maps (on iOS) or <a href="https://maps.apple.com" target="_blank" rel="noopener">maps.apple.com</a> (on the web)
-      with the terrasse coordinates pre-filled. Leyso does not control what Apple does with that information;
-      please refer to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.
+      Tapping directions may open Apple Maps, Google Maps, or the system browser
+      with the terrasse coordinates pre-filled. Leyso does not control what those providers do with that information;
+      please refer to their privacy policies
+      (for example <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a>
+      and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>).
     </p>
 
-    <h2>10. In-app tips (iOS)</h2>
+    <h2>10. Tips / support</h2>
     <p>
-      Optional tips use Apple In-App Purchase. Payment is handled entirely by Apple; we do not receive your card details.
+      <strong>iOS:</strong> Optional tips use Apple In-App Purchase. Payment is handled entirely by Apple; we do not receive your card details.
+    </p>
+    <p style="margin-top:10px;">
+      <strong>Android:</strong> Optional support may open an external page (Buy Me a Coffee). That payment is handled by the third-party site;
+      we do not receive your card details through the Leyso app.
     </p>
 
     <h2>11. Children</h2>
@@ -260,7 +271,7 @@
     </p>
 
     <footer>
-      © 2026 Avisarem — Leyso &nbsp;·&nbsp; Geneva, Switzerland
+      © 2026 Avisarem — Leyso &nbsp;·&nbsp; Geneva &amp; Basel, Switzerland
     </footer>
 
   </div>
